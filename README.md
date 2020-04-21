@@ -10,13 +10,14 @@ $ tree
 
 # Display directories only, to set depth level (3)
 $ tree -d -L 3
+# Can also be written like this:
 $ tree -dL 3
 
 	# Other useful flags
-		-a # Display hidden files
-		-p # Display read/write permissions
-		-s # Display size of files/folders
-		-f # Display full path
+	-a # Display hidden files
+	-p # Display read/write permissions
+    -s # Display size of files/folders
+    -f # Display full path
 
 # Wildcard/Pattern matching 'bases' and 'search', prune nonmatches
 $ tree -P '*bases*' --prune
