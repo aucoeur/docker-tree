@@ -1,10 +1,35 @@
-<p align="center"><strong style="color: red;">❌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOP: DO NOT CLONE THIS REPO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❌</strong><br>Carefully <b>follow the instructions below</b> to ensure you <b>get credit</b> for this assignment.</p>
+# docker-tree
+
+This repository contains a Dockerfile that installs [tree](http://mama.indstate.edu/users/ice/tree/) using the `alpine:latest` image and returns the version using: `tree --version`
+
+### Other Examples
+
+```bash
+# Basic command
+$ tree
+
+# Display directories only, to set depth level (3)
+$ tree -d -L 3
+$ tree -dL 3
+
+	# Other useful flags
+		-a # Display hidden files
+		-p # Display read/write permissions
+		-s # Display size of files/folders
+		-f # Display full path
+
+# Wildcard/Pattern matching 'bases' and 'search', prune nonmatches
+$ tree -P '*bases*' --prune
+
+# Ignore anything that matches with 'bases'
+$ tree -I '*bases*|*search*'
+
+# Print output to file
+$ tree . -do dev_list.txt -L 3
+```
 
 ---
-
-# 🐳 docker-starter
-
-_Use this required starter pack for all assignments in [BEW 2.2: DevOps, Deployments &amp; Containers](https://make.sc/bew2.2). Follow the instructions below, and submit the resulting repository on [Gradescope](https://make.sc/trackbew2.2) by the assigned due date._
+ docker-tree uses [this](https://github.com/make-school-labs/docker-starter) starter template from [BEW 2.2: DevOps, Deployments &amp; Containers](https://make.sc/bew2.2). 
 
 ## 📂 Project Files
 
@@ -15,15 +40,6 @@ _Use this required starter pack for all assignments in [BEW 2.2: DevOps, Deploym
 | `captain-definition` | **DO NOT MODIFY.** Used by CapRover for deployment. |
 | `Dockerfile` | **Implement solutions in this file**. |
 | `README.md` | Replace this `README` with content describing the purpose of your project. |
-
-## 🏁 Get Started
-
-1. [Import an existing repository on GitHub](https://github.com/new/import).
-1. Under `Your old repository's clone URL`, paste `https://github.com/make-school-labs/docker-starter`.
-1. Name your repository according to the assignment instructions.
-    <img src="https://github.com/Make-School-Courses/BEW-2.2-Docker-DevOps-Deployments/blob/master/Images/import.png?raw=true" width="60%">
-1. Click `Begin Import`.
-1. Locally clone your new copy of the starter code.
 
 ## 📦 Building & Running
 
@@ -38,6 +54,7 @@ _Use this required starter pack for all assignments in [BEW 2.2: DevOps, Deploym
 _Builds the `Dockerfile` found at the current path (`.`)._
 
 ```bash
+# For local, omit USERNAME
 $ docker build -t USERNAME/IMAGE_NAME .
 ```
 
