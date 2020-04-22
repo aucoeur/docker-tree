@@ -1,6 +1,7 @@
 # docker-tree
 
-This repository contains a Dockerfile that installs [tree](http://mama.indstate.edu/users/ice/tree/) using the `alpine:latest` image and returns the version using: `tree --version`
+<!--- This repository contains a Dockerfile that installs [tree](http://mama.indstate.edu/users/ice/tree/) using the `alpine:latest` image and returns the version using: `tree --version` --->
+This repository contains a Dockerfile that installs [tldr](https://www.npmjs.com/package/tldr) using the `alpine:latest` image and returns the entry for [tree](http://mama.indstate.edu/users/ice/tree/)
 
 ### Other Examples
 
