@@ -7,8 +7,10 @@ FROM alpine:latest
 # Install tldr:
 
 # RUN apk add tree
-RUN apk add npm
-RUN npm install -g tldr
+# RUN apk add npm
+# RUN npm install -g tldr
+RUN apk add py-pip
+RUN pip install tldr
 
 # Print out the description of 'tree' command
 
@@ -16,4 +18,4 @@ RUN echo "Tree is like ls with superpowers that will list expanded nested direct
 
 # Run the 'tldr tree' command
 # CMD [ "tree", "--version"]
-CMD [ "tldr tree" ]
+CMD tldr tree
