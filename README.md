@@ -1,34 +1,7 @@
 # docker-tree
 
-<!--- This repository contains a Dockerfile that installs [tree](http://mama.indstate.edu/users/ice/tree/) using the `alpine:latest` image and returns the version using: `tree --version` --->
-This repository contains a Dockerfile that installs [tldr](https://www.npmjs.com/package/tldr) using the `alpine:latest` image and returns the entry for [tree](http://mama.indstate.edu/users/ice/tree/)
-
-### Other Examples
-
-```bash
-# Basic command
-$ tree
-
-# Display directories only, to set depth level (3)
-$ tree -d -L 3
-# Can also be written like this:
-$ tree -dL 3
-
-	# Other useful flags
-	-a # Display hidden files
-	-p # Display read/write permissions
-    -s # Display size of files/folders
-    -f # Display full path
-
-# Wildcard/Pattern matching 'bases' and 'search', prune nonmatches
-$ tree -P '*bases*' --prune
-
-# Ignore anything that matches with 'bases'
-$ tree -I '*bases*|*search*'
-
-# Print output to file
-$ tree . -do dev_list.txt -L 3
-```
+- This repository contains a Dockerfile that installs [tree](http://mama.indstate.edu/users/ice/tree/) using the `alpine:latest` image and returns the version using: `tree --version` if a `PATH` isn't passed
+<!-- This repository contains a Dockerfile that installs [tldr](https://www.npmjs.com/package/tldr) using the `alpine:latest` image and returns the entry for [tree](http://mama.indstate.edu/users/ice/tree/) -->
 
 ---
  docker-tree uses [this](https://github.com/make-school-labs/docker-starter) starter template from [BEW 2.2: DevOps, Deployments &amp; Containers](https://make.sc/bew2.2). 
@@ -65,5 +38,35 @@ $ docker build -t USERNAME/IMAGE_NAME .
 _Runs the `IMAGE_NAME` image. Deletes the container after executing the `CMD`_.
 
 ```bash
-$ docker run --rm --name CONTAINER_NAME IMAGE_NAME
+$ docker run --rm --name docker-tree docker-tree 
+tree v1.8.0 (c) 1996 - 2018 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro 
+
+$ docker container run --rm -it -v [PATH]:[PATH] --name docker-tree docker-tree [PATH] -[FLAGS]
+```
+
+### Other Examples
+
+```bash
+# Basic command
+$ tree
+
+# Display directories only, to set depth level (3)
+$ tree -d -L 3
+# Can also be written like this:
+$ tree -dL 3
+
+	# Other useful flags
+	-a # Display hidden files
+	-p # Display read/write permissions
+    -s # Display size of files/folders
+    -f # Display full path
+
+# Wildcard/Pattern matching 'bases' and 'search', prune nonmatches
+$ tree -P '*bases*' --prune
+
+# Ignore anything that matches with 'bases'
+$ tree -I '*bases*|*search*'
+
+# Print output to file
+$ tree . -do dev_list.txt -L 3
 ```
