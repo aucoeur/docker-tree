@@ -41,7 +41,7 @@ _Runs the `IMAGE_NAME` image. Deletes the container after executing the `CMD`_.
 $ docker run --rm --name docker-tree docker-tree 
 tree v1.8.0 (c) 1996 - 2018 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro 
 
-$ docker container run --rm -v [PATH_TO_MOUNT]:[PATH_TO_MOUNT] --name docker-tree docker-tree [PATH_TO_TREE] -[FLAGS]
+$ docker container run --rm -v [PWD]:[PWD] --name docker-tree docker-tree [PWD] -[FLAGS]
 ```
 
 ### Other Examples
